@@ -4,6 +4,6 @@ Welcome to a realm of command-line sorcery, where data dances and high-performan
 
 What's Enchanted Within?
 
-    Data Alchemy: Unleash the power to transmute raw data into works of artificial beauty. These scripts are your alchemical assistants, turning mundane information into the gold of knowledge.
+Data Alchemy: Unleash the power to transmute raw data into works of artificial beauty. These scripts are your alchemical assistants, turning mundane information into the gold of knowledge.
 
-    HPC Incantations: Navigate the cosmos of high-performance computing with the finesse of a seasoned mage. Harness the arcane forces within these scripts to orchestrate computational symphonies that resonate with speed and precision.
+HPC Incantations: Navigate the cosmos of high-performance computing with the finesse of a seasoned mage. Harness the arcane forces within these scripts to orchestrate computational symphonies that resonate with speed and precision.
