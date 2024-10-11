@@ -1,5 +1,4 @@
 #! /bin/bash
-
 a=`ls -d */`
 for i in $a
 do
