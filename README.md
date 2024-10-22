@@ -1,4 +1,4 @@
-# Bash Wizardry for Data Handling and HPC Bliss 🚀
+# Bash Wizardry for Data Handling and HPC  🚀
 
 Welcome to a realm of command-line sorcery, where data dances and high-performance computing bows in reverence. Behold, a collection of bash scripts designed to be your trusty spellbook, empowering you to conjure and command artificial data for the mystical realms of data science, particularly in the sacred domains of ML/AI projects.
 
