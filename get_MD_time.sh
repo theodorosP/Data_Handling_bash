@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# Sort top-level directories naturally
 dirs=$(ls -d */ | sort -V)
 
 for i in $dirs
