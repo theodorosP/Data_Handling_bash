@@ -7,7 +7,6 @@ do
     echo " "
     echo "dir = $i"
 
-    # Change to the directory; skip processing if it fails
     if cd "$i"; then
         current_time=0
 
@@ -18,7 +17,6 @@ do
             echo "NO OUTCAR or OUTCAR.gz"
         fi
 
-        # Sort RUN*/ subdirectories naturally
         for dir in $(ls -d RUN*/ | sort -V)
         do
             if [ -d "$dir" ]; then
