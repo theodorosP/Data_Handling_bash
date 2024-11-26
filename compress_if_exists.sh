@@ -1,7 +1,7 @@
 #! /bin/bash
 
 print_dashes() {
-    local input_string="$1"  # Take the first argument as the input string
+    local input_string="$1"
     for i in $(seq 0 $((${#input_string} - 1)))
     do
         echo -n "-"
