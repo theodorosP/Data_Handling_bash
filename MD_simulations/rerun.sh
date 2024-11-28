@@ -19,3 +19,5 @@ do
 	done
 	cd ../
 done
+
+#sbatch job
