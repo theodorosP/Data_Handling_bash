@@ -1,23 +1,28 @@
-#! /bin/bash
+#!/bin/bash
 
-source zip_and_copy_files.sh
+source process_data.sh
 
-dirs=$(ls -d */)
+job=job_you_need_to_run
 
-for i in $dirs
+path=$(pwd)
+last_part=$(last_part_of_the_path)
+type_of_cation=$(get_part_after_underscore)
+
+if [[ "$last_part" != "Na" && "$last_part" != "NH4" && "$last_part" != "CH3NH3" ]]; then
+    echo "Test folder"
+    sed -i "s|/$type_of_cation/|/$last_part/|g" "$job"
+fi
+
+l=($(get_paths "$job"))
+
+echo "Directories extracted from $job:"
+
+for i in "${l[@]}"
 do
-	cd $i
-	sub_dirs=$(ls -d */)
-	for j in $sub_dirs
-	do
-		name=$j
-		echo $name
-		print_dashes "$name"
-		cd $j
-		zip_and_copy
-		cd ../
-	done
-	cd ../
+    cd "$i"
+    pwd
+    zip_and_copy
 done
 
-#sbatch job
+cd "$path"
+#sbatch "$job"
