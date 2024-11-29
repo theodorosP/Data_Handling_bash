@@ -57,6 +57,7 @@ fi
 find . -maxdepth 1 -type f -exec cp {} "RUN$num/" \;
 rm -rf slurm*
 mv CONTCAR POSCAR
+rm -rf OUTCAR.gz
 NELECT_OUTCAR=$(zgrep "NELECTCURRENT" OUTCAR | tail -1 | awk '{print $2}')
 echo "$NELECT_OUTCAR"
 NELECT_INCAR=$(grep "NELECT =" INCAR | tail -1 | awk '{print $3}')
