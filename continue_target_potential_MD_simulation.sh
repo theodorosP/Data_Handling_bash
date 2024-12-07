@@ -9,6 +9,7 @@ if [[ -f OUTCAR ]]; then
     gzip OUTCAR
 else
     echo OUTCAR NOT found
+	return 1
 fi
 find . -maxdepth 1 -type f -exec cp {} "RUN$num/" \;
 rm -rf slurm*
