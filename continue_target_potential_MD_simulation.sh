@@ -23,10 +23,9 @@ rm -rf OUTCAR.gz
 }
 
 
-a=`ls -d */`
-for i in $a
+for i in path_to_job1 path_to_job2 path_to_job3
 do
     cd $i
+	pwd
     cont
-    cd ../
 done
