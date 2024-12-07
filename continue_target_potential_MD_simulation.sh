@@ -8,7 +8,7 @@ if [[ -f OUTCAR ]]; then
     echo Zipping OUTCAR
     gzip OUTCAR
 else
-    echo OUTCAR NOT found
+    echo OUTCAR NOT found. Stopping script.
 	return 1
 fi
 find . -maxdepth 1 -type f -exec cp {} "RUN$num/" \;
