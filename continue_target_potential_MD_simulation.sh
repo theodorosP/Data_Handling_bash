@@ -1,4 +1,4 @@
-#!/bin/bash
+k#!/bin/bash
 
 cont(){
 a=$(ls -ltr | grep -c ^d)
@@ -23,8 +23,8 @@ rm -rf OUTCAR.gz
 }
 
 
-cd /viper/u/trahman/data/theo/HER_Au/slow_grow_method/NH4/3_NH4
-dirs=$(ls -d */)
+cd /viper/u/trahman/data/theo/HER_Au/slow_grow_method/NH4/5_NH4
+dirs=$(ls -d */ | sort -V )
 
 for i in $dirs
 do
@@ -33,3 +33,4 @@ do
     cont
     cd ../
 done
+
