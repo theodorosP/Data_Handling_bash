@@ -8,7 +8,7 @@ if [[ -f OUTCAR ]]; then
     echo Zipping OUTCAR
     gzip OUTCAR
 else
-    echo OUTCAR NOT found. Stopping script.
+    echo -e "\e[5mOUTCAR NOT found. Moving to the next folder.\e[0m"
 	return 1
 fi
 find . -maxdepth 1 -type f -exec cp {} "RUN$num/" \;
@@ -23,9 +23,13 @@ rm -rf OUTCAR.gz
 }
 
 
-for i in path_to_job1 path_to_job2 path_to_job3
+cd /viper/u/trahman/data/theo/HER_Au/slow_grow_method/NH4/3_NH4
+dirs=$(ls -d */)
+
+for i in $dirs
 do
     cd $i
-	pwd
+    pwd
     cont
+    cd ../
 done
