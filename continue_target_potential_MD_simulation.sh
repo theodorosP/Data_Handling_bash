@@ -22,7 +22,7 @@ else
 fi
 }
 
-
+cd path_to_folder
 dirs=$(ls -d */ | sort -V )
 
 for i in $dirs
