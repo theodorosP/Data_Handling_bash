@@ -5,12 +5,6 @@ last_run() {
     local last_run
     local new_run
 
-    # Check if OUTCAR.gz is missing
-    if [ ! -f "$base_dir/OUTCAR.gz" ]; then
-        echo "File OUTCAR.gz is not found. Check the directory: $base_dir"
-        return 1
-    fi
-
     # Check if POSCAR, CONTCAR, and REPORT are all missing
     if [ ! -f "$base_dir/POSCAR" ] && [ ! -f "$base_dir/CONTCAR" ] && [ ! -f "$base_dir/REPORT" ]; then
         # Check if at least one RUN directory exists (RUN1, RUN2, etc.)
@@ -18,6 +12,12 @@ last_run() {
             echo "Nothing to do in: $base_dir"
             return 0
         fi
+    fi
+
+	# Check if OUTCAR.gz is missing
+    if [ ! -f "$base_dir/OUTCAR.gz" ]; then
+        echo "File OUTCAR.gz is not found. Check the directory: $base_dir"
+        return 1
     fi
 
     # Find the last RUN directory
@@ -37,9 +37,9 @@ last_run() {
 }
 
 
-for i in 7
+for i in $(seq 1 6)
 do
-    dir="/home/theodoros/PROJ_ElectroCat/theodoros/HER/Au/HER_Au/slow_grow_method/NH4/1_NH4/H2O_splitting_NOT_from_NH4_hydration_shell/1_NH4_40_H2O_v$i"
+    dir="/home/theodoros/PROJ_ElectroCat/theodoros/HER/Au/HER_Au/slow_grow_method/NH4/1_NH4/shuttling/1_NH4_40_H2O_v$i"
 
     if [ -d "$dir" ]; then
         cd "$dir"
