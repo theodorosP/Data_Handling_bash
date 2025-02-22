@@ -30,3 +30,24 @@ last_run() {
     echo "Files moved to $new_run"
 }
 
+look_for_file() {
+    local file_name=$1
+
+    if [ -f "$file_name" ]; then
+        return 0  # File exists (success)
+    else
+        return 1  # File does not exist (failure)
+    fi
+}
+
+for i in 6 1 2 3 5
+do
+    dir="/home/theodoros/PROJ_ElectroCat/theodoros/HER/Au/HER_Au/slow_grow_method/NH4/1_NH4/H2O_splitting_NOT_from_NH4_hydration_shell/1_NH4_40_H2O_v$i"
+
+    if [ -d "$dir" ]; then
+        cd "$dir"
+		last_run
+    else
+        echo "Directory not found: $dir"
+    fi
+done
