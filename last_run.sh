@@ -5,6 +5,12 @@ last_run() {
     local last_run
     local new_run
 
+    # Check if OUTCAR.gz is missing
+    if [ ! -f "$base_dir/OUTCAR.gz" ]; then
+        echo "File OUTCAR.gz is not found. Check the directory: $base_dir"
+        return 1
+    fi
+
     # Check if POSCAR, CONTCAR, and REPORT are all missing
     if [ ! -f "$base_dir/POSCAR" ] && [ ! -f "$base_dir/CONTCAR" ] && [ ! -f "$base_dir/REPORT" ]; then
         # Check if at least one RUN directory exists (RUN1, RUN2, etc.)
@@ -30,17 +36,8 @@ last_run() {
     echo "Files moved to $new_run"
 }
 
-look_for_file() {
-    local file_name=$1
 
-    if [ -f "$file_name" ]; then
-        return 0  # File exists (success)
-    else
-        return 1  # File does not exist (failure)
-    fi
-}
-
-for i in 6 1 2 3 5
+for i in 7
 do
     dir="/home/theodoros/PROJ_ElectroCat/theodoros/HER/Au/HER_Au/slow_grow_method/NH4/1_NH4/H2O_splitting_NOT_from_NH4_hydration_shell/1_NH4_40_H2O_v$i"
 
